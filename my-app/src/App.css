@@ -2,6 +2,21 @@
   text-align: center;
 }
 
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.App ul {
+  list-style: none;
+}
+
+.App ul > li {
+  float: left;
+  padding: 7px 17px;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
