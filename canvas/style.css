@@ -10,6 +10,11 @@ ul, ol {list-style: none;}
   vertical-align: -.15em;
 }
 
+#board {
+  display: block;
+  background: white;
+}
+
 .actions {
   position: fixed;
   top: 0;
@@ -58,4 +63,25 @@ ul, ol {list-style: none;}
 .colors >li.active {
   box-shadow:  0 0 3px rgba(0, 0, 0, .95);
   transform: scale(1.2);
+}
+.sizes {
+  position: fixed;
+  right: 20px;
+  top: 10px;
+}
+
+.sizes > li {
+  margin: 20px 0;
+}
+
+.sizes > .thin {
+  height: 0;
+  width: 20px;
+  border-top:  3px solid black;
+}
+
+.sizes > .thick {
+  height: 0;
+  width: 20px;
+  border-top:  6px solid black;
 }

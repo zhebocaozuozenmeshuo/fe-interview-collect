@@ -2,6 +2,7 @@ const log = console.log.bind(console)
 
 let board = document.getElementById('board')
 let context = board.getContext('2d')
+let lineWidth = 5
 
 autoSetCanvasSize(board)
 
@@ -17,6 +18,17 @@ pen.onclick = function () {
   eraserEnabled = false
   pen.classList.add('active')
   eraser.classList.remove('active')
+}
+clear.onclick = function() {
+  context.clearRect(0, 0, board.width, board.height)
+}
+download.onclick = function() {
+  let url = board.toDataURL()
+  let a = document.createElement('a')
+  a.href = url
+  a.download = '我的画儿'
+  a.target = '_blank'
+  a.click()
 }
 red.onclick = function () {
   // 填充颜色
@@ -41,10 +53,17 @@ blue.onclick = function () {
   green.classList.remove('active')
   red.classList.remove('active')
 }
+thin.onclick = function() {
+  lineWidth = 5
+}
+thick.onclick = function() {
+  lineWidth = 10
+}
+
 function drawLine(x1, y1, x2, y2) {
   context.beginPath()
   context.moveTo(x1, y1)
-  context.lineWidth = 5
+  context.lineWidth = lineWidth 
   context.lineTo(x2, y2)
   context.stroke()
   context.closePath()
