@@ -1,0 +1,20 @@
+body {margin:0;}
+html {}
+#board {
+  background: green;
+  display: block;
+}
+.actions {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.actions > #brush {
+  display: none;
+}
+.actions.eraser > #brush {
+  display: inline-block;
+}
+.actions.eraser > #eraser {
+  display: none;
+}
