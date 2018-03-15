@@ -51,6 +51,7 @@ function listenToUser(canvas) {
     }
     canvas.ontouchmove = function (event) {
       log('摸动')
+      event.preventDefault()
       let x = event.touches[0].clientX
       let y = event.touches[0].clientY
 
